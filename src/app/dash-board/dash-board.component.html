@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="header-content employee-header">
+      <div class="emp-detail-text">
+        Employee Details
+        <div class="emp-count">10</div>
+      </div>
+        <button class="add-button" (click)="onAddUser()"><img src="../assets/plus_symbol.svg" />Add User</button>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search Here" >
+  </div>
+  
+  
+    <div class="table-main">
+      <table id="table-display" class="table">
+        <tr>
+          <!--Table header-->
+          <th></th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Department</th>
+          <th>Salary</th>
+          <th>Start Date</th>
+          <th>Actions</th>
+      </tr>
+      <tr>
+        <td>
+            <img class="profile" src="../assets/profile_img-2.png" alt="">
+        </td>
+        <td>Mukul</td>
+        <td>Male</td>
+        <td>
+            <div class="dept-label">
+                <h6>IT</h6>
+            </div>
+        </td>
+        <td>0</td>
+        <td>11 march 2011</td>
+  
+        <!--To update and delete an employee from the database-->
+        <td>
+             
+            <img src="../assets/delete.svg" alt="delete">
+            <img src="../assets/edit.svg" alt="edit">
+        </td>
+    </tr>
+    <tr>
+      <td>
+          <img class="profile" src="../assets/profile_img-4.png" alt="">
+      </td>
+      <td>Ravi</td>
+      <td>Male</td>
+      <td>
+          <div class="dept-label">
+              <h6>Developer</h6>
+          </div>
+          <div class="dept-label">
+            <h6>team-lead</h6>
+        </div>
+      </td>
+      <td>550000</td>
+      <td>15 April 2015</td>
+  
+      <!--To update and delete an employee from the database-->
+      <td>
+           
+          <img src="../assets/delete.svg" alt="delete">
+          <img src="../assets/edit.svg" alt="edit">
+      </td>
+  </tr>
+      </table>
+    </div>
+  </div>
