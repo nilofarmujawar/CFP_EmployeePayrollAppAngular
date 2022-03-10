@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class FormComponent implements OnInit {
 
   constructor(private router:Router) { }
-  names:any="";
+  yourName:any="";
   ngOnInit(): void {
   }
   
@@ -18,8 +18,8 @@ export class FormComponent implements OnInit {
     this.router.navigate(["dashboard"]);
   }
   onSubmitSave(inputform:NgForm){
-    this.names=inputform.name;
+    this.yourName=inputform.name;
     console.log(inputform.value);
-  //  console.log("thankyouFor assigning the name"+this.names);
+  //  console.log("thankyou For signing up"+this.yourName);
   }
 }
