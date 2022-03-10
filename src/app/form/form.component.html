@@ -1,10 +1,10 @@
 <div class="form-content">
-    <form class="form" >
+    <form class="form" (ngSubmit)="onSubmitSave(inputform)" #inputform="ngForm">
         <div class="form-head">Employee Payroll Form</div>
         <div class="row-content">
             <label for="name" class="label text">Name</label>
             <input type="text" name="name" id="name" class="input required" placeholder="Your Name ..."
-                autocomplete="off" required><br />
+                autocomplete="off" required ngModel><br />
             <span class="text-error" for="text"></span>
         </div>
 
@@ -13,22 +13,22 @@
             <div class="profile-radio-content">
                 <label>
                     <input type="radio" id="profile2" name="profile"
-                        value="../assets/profile_img-1.png" required>
+                        value="../assets/profile_img-1.png" required ngModel>
                     <img class="profile" id="image1" src="../assets/profile_img-1.png">
                 </label>
                 <label>
                     <input type="radio" id="profile2" name="profile"
-                        value="../assets/profile_img-2.png" required>
+                        value="../assets/profile_img-2.png" required ngModel>
                     <img class="profile" id="image2" src="../assets/profile_img-2.png">
                 </label>
                 <label>
                     <input type="radio" id="profile3" name="profile"
-                        value="../assets/profile_img-3.png" required>
+                        value="../assets/profile_img-3.png" required ngModel>
                     <img class="profile" id="image3" src="../assets/profile_img-3.png">
                 </label>
                 <label>
                     <input type="radio" id="profile4" name="profile"
-                        value="../assets/profile_img-4.png" required>
+                        value="../assets/profile_img-4.png" required ngModel>
                     <img class="profile" id="image4" src="../assets/profile_img-4.png">
                 </label>
             </div>
@@ -37,9 +37,9 @@
         <div class="row-content">
             <label class="label text" for="gender">Gender</label>
             <div>
-                <input type="radio" id="male" name="gender" value="Male" required>
+                <input type="radio" id="male" name="gender" value="Male" required ngModel>
                 <label class="text" for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female" required>
+                <input type="radio" id="female" name="gender" value="Female" required ngModel>
                 <label class="text" for="female">Female</label>
             </div>
         </div>
@@ -47,26 +47,29 @@
         <div class="row-content">
             <label class="label text" for="department">Department</label>
             <div>
-                <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
+                <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" ngModel>
                 <label class="text" for="hr">HR</label>
-                <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales">
+                <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales" ngModel>
                 <label class="text" for="sales">Sales</label>
-                <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance">
+                <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance" ngModel>
                 <label class="text" for="finance">Finance</label>
-                <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer">
+                <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer" ngModel>
                 <label class="text" for="engineer">Engineer</label>
-                <input class="checkbox" type="checkbox" id="others" name="department" value="Others">
+                <input class="checkbox" type="checkbox" id="others" name="department" value="Others" ngModel>
                 <label class="text" for="others">Others</label>
             </div>
         </div>
-
         <div class="row-content">
             <label class="label text" for="salary">Choose Your Salary: </label>
             <input class="input required" type="range" name="salary" id="salary" min="300000" max="500000"
-                step="100" value="400000">
+                step="100" value="400000" [ngModel]>
             <output class="salary-output text" for="salary">400000</output>
         </div>
-
+        <div class="row-content">
+            <label class="label-text" for="StartDate">Start Date:-</label>
+            <input type="date" class="startDate" id="StartDate" name="date"  required [ngModel]>
+        </div>
+<!-- 
         <div class="row-content">
             <label class="label text" for="startDate">Start Date</label>
             <div>
@@ -128,11 +131,11 @@
 
             </div>
             <span class="date-error" for="text"></span>
-        </div>
+        </div> -->
 
         <div class="row-content">
             <label class="label text" for="notes">Notes</label>
-            <textarea id="notes" class="input required" name="Notes" placeholder="" style="height:100px"></textarea>
+            <textarea id="notes" class="input required" name="Notes" placeholder="" style="height:100px" ngModel></textarea>
         </div>
 
         <div class="buttonParent">
