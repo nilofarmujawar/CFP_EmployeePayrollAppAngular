@@ -7,18 +7,22 @@ import { HeaderComponent } from './header/header.component';
 import { FormComponent } from './form/form.component';
 import { DashboardComponent } from './dash-board/dash-board.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
   AppComponent,
   HeaderComponent,
   FormComponent,
-  DashboardComponent
+  DashboardComponent,
+  ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

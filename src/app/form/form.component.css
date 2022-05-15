@@ -195,7 +195,8 @@ select {
     opacity: 0.3;
 }
 
-error-output{
+.text-error{
+    
     margin-left: 10px;
     font-size: 12px;
     font-style: italic;
