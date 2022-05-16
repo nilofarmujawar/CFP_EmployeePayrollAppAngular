@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import { NgModel } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { EmployeeModel } from '../EmployeeModel';
 
@@ -26,10 +24,11 @@ export class FormComponent implements OnInit {
   //whenever the component is initialized ngOnInit method is invoked first
   ngOnInit(): void {
     //here we use this.id because we want to get the data of particular employee by searching there id for which we use Activated route
-    this.service.getEmployeeById(this.Id).subscribe((getData: any) => {
-      console.log(getData);
-      this.employee = getData;
-    });
+   this.service.getEmployeeById(this.Id).subscribe((getData: any) => {
+    console.log(getData);
+    this.employee = getData;
+  });
+    
   }
 
   // navigate user to DashboardComponent
@@ -55,23 +54,20 @@ export class FormComponent implements OnInit {
 
   addEmployeeData() {
     console.log(this.employee);
-    this.service.insertEmployee(this.employee).subscribe(data => {
-      console.log("data is saved successfullly")
+    this.service.insertEmployee(this.employee).subscribe((data:any) => {
       this.router.navigate(["dashboard"])
     })
+  
   }
 
   //  Calls updateEmployeeData method in service which uses http update method
   //  to update employee data in database using ID id required from routing the  path for that 
   //  we used activated route which take id as a path variable
   updateEmployeeData() {
-    this.service.updateEmployeeById(this.employee, this.Id).subscribe(data => {
-      console.log("data updated succesfully");
+    this.service.updateEmployeeById(this.employee, this.Id).subscribe ((data:any) => {
       this.router.navigate(["dashboard"])
     });
+    
   }
-
-
-  
 
 }
